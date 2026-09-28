@@ -76,10 +76,34 @@
     margin:0 auto 26px;
   }
   .hero-visual{
-    width:180px;
-    height:180px;
+    width:100%;
+    max-width:460px;
+    aspect-ratio:16/9;
     margin:0 auto 26px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(0,0,0,0.35);
   }
+  .hero-visual img{width:100%;height:100%;object-fit:cover;}
+
+  .section-photo{
+    width:100%;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    margin-bottom:28px;
+  }
+  .section-photo img{width:100%;height:auto;display:block;}
+
+  .bottle-photo{
+    width:100%;
+    max-width:220px;
+    margin:0 auto 18px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .bottle-photo img{width:100%;height:auto;display:block;}
 
   /* CTA button */
   .cta-btn{
@@ -233,13 +257,7 @@
     <div class="container">
       <span class="eyebrow">Hearing Health Breakthrough</span>
       <div class="hero-visual">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="48" fill="#ffffff" fill-opacity="0.06"/>
-          <circle cx="50" cy="50" r="34" fill="#ffffff" fill-opacity="0.08"/>
-          <path d="M40 30c-8 4-13 12-13 21 0 12 9 21 19 24" stroke="#8fd694" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M46 38c-5 2-8 7-8 13 0 7 5 13 12 15" stroke="#b6e07c" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <circle cx="63" cy="46" r="6" fill="#8fd694"/>
-        </svg>
+        <img src="images/hero-lifestyle.png" alt="Adult enjoying clear, confident hearing outdoors" loading="eager">
       </div>
       <h1>Struggling With Ringing Ears or <span>Fading Hearing?</span></h1>
       <p class="sub">Audifort is a 20+ plant-ingredient liquid formula designed to support your hearing health from the inside out — no pills, no surgery, just a few drops a day.</p>
@@ -285,6 +303,9 @@
     <div class="container">
       <h2>A Different Approach</h2>
       <p class="lede">Audifort combines over 20 plant-based ingredients in one easy liquid dropper, taken once daily.</p>
+      <div class="section-photo">
+        <img src="images/ingredients-flatlay.png" alt="Natural botanical ingredients used in the formula" loading="lazy">
+      </div>
       <div class="ing-grid">
         <div class="ing-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10Z"/></svg>
@@ -347,6 +368,9 @@
   <section>
     <div class="container">
       <div class="offer-box">
+        <div class="bottle-photo">
+          <img src="images/bottle-mockup.png" alt="Liquid dropper bottle illustration" loading="lazy">
+        </div>
         <span class="tag">Most Popular</span>
         <h3>Multi-Bottle Bundles Available</h3>
         <p>Larger packages currently include free shipping and free bonus digital guides. Pricing is a one-time payment — no subscriptions or recurring charges. Availability and bonuses are set by the manufacturer and may change.</p>
