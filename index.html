@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audifort® — 360° Hearing Support</title>
+<meta name="description" content="Audifort is a plant-based liquid formula designed to support healthy hearing. Backed by a 90-day money-back guarantee.">
+<style>
+  :root{
+    --navy:#0b2e3a;
+    --teal:#0f6d63;
+    --teal-light:#12a394;
+    --sand:#f6f3ea;
+    --leaf:#7cb342;
+    --ink:#1c2b2e;
+    --muted:#5b6b6e;
+    --white:#ffffff;
+    --danger:#c0392b;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(11,46,58,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;}
+  .container{max-width:720px;margin:0 auto;padding:0 20px;}
+
+  /* Top trust bar */
+  .topbar{
+    background:var(--navy);
+    color:#cfe8e2;
+    font-size:13px;
+    text-align:center;
+    padding:8px 14px;
+    letter-spacing:.3px;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,#0b2e3a 0%, #123f4c 100%);
+    color:var(--white);
+    padding:38px 0 34px;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    background:rgba(124,179,66,0.18);
+    border:1px solid rgba(124,179,66,0.5);
+    color:#b6e07c;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(26px,6vw,38px);
+    line-height:1.2;
+    margin:0 0 12px;
+    font-weight:800;
+  }
+  .hero h1 span{color:#8fd694;}
+  .hero p.sub{
+    font-size:17px;
+    color:#d7e6e3;
+    max-width:520px;
+    margin:0 auto 26px;
+  }
+  .hero-visual{
+    width:180px;
+    height:180px;
+    margin:0 auto 26px;
+  }
+
+  /* CTA button */
+  .cta-btn{
+    display:block;
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    background:linear-gradient(180deg,#8fd15a,#6aa938);
+    color:#0b2e0f;
+    font-size:19px;
+    font-weight:800;
+    text-align:center;
+    text-decoration:none;
+    padding:18px 20px;
+    border-radius:999px;
+    box-shadow:0 8px 0 #4d7d26, 0 14px 24px rgba(0,0,0,0.28);
+    border:none;
+    cursor:pointer;
+    transition:transform .08s ease;
+  }
+  .cta-btn:active{transform:translateY(4px); box-shadow:0 4px 0 #4d7d26, 0 8px 14px rgba(0,0,0,0.25);}
+  .cta-btn small{display:block; font-size:12px; font-weight:600; margin-top:4px; color:#173a0d; text-transform:uppercase; letter-spacing:.5px;}
+  .cta-wrap{margin:22px 0;}
+  .cta-note{font-size:13px; color:#a9c2bd; margin-top:10px;}
+
+  /* Sections */
+  section{padding:40px 0;}
+  section.alt{background:var(--white);}
+  h2{
+    font-size:clamp(22px,5vw,28px);
+    color:var(--navy);
+    text-align:center;
+    margin:0 0 10px;
+    font-weight:800;
+  }
+  h2 + p.lede{
+    text-align:center;
+    color:var(--muted);
+    max-width:520px;
+    margin:0 auto 28px;
+    font-size:16px;
+  }
+
+  /* Problem list */
+  .problem-list{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+  .problem-list li{
+    background:var(--white);
+    border:1px solid #e7ded0;
+    border-radius:var(--radius);
+    padding:16px 18px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    font-size:15.5px;
+  }
+  .problem-list li svg{flex:0 0 22px; width:22px; height:22px; margin-top:2px; color:var(--danger);}
+
+  /* Ingredients grid */
+  .ing-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .ing-card{
+    background:var(--sand);
+    border-radius:var(--radius);
+    padding:18px 14px;
+    text-align:center;
+    border:1px solid #e7ded0;
+  }
+  .ing-card .icon{width:40px;height:40px;margin:0 auto 10px;color:var(--teal);}
+  .ing-card h3{font-size:15px; margin:0 0 4px; color:var(--navy);}
+  .ing-card p{font-size:13px; color:var(--muted); margin:0;}
+
+  /* Steps */
+  .steps{display:grid; gap:16px;}
+  .step{display:flex; gap:14px; align-items:flex-start;}
+  .step .num{
+    flex:0 0 34px; height:34px; width:34px;
+    background:var(--teal); color:var(--white);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:15px;
+  }
+  .step h3{margin:0 0 4px; font-size:16px; color:var(--navy);}
+  .step p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  /* Guarantee */
+  .guarantee{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    text-align:center;
+  }
+  .guarantee .badge{width:64px; height:64px; margin:0 auto 14px; color:#8fd694;}
+  .guarantee h3{font-size:20px; margin:0 0 10px;}
+  .guarantee p{color:#cfe0dc; font-size:14.5px; max-width:480px; margin:0 auto;}
+
+  /* Offer box */
+  .offer-box{
+    border:2px solid var(--leaf);
+    background:#f4fbea;
+    border-radius:var(--radius);
+    padding:22px;
+    text-align:center;
+  }
+  .offer-box .tag{
+    display:inline-block; background:var(--leaf); color:#fff; font-size:12px; font-weight:800;
+    padding:5px 12px; border-radius:999px; margin-bottom:12px; letter-spacing:.4px; text-transform:uppercase;
+  }
+  .offer-box h3{margin:0 0 6px; color:var(--navy); font-size:19px;}
+  .offer-box p{color:var(--muted); font-size:14.5px; margin:0 0 18px;}
+
+  /* FAQ */
+  .faq-item{
+    border-bottom:1px solid #e7ded0;
+    padding:16px 0;
+  }
+  .faq-item h3{margin:0 0 6px; font-size:15.5px; color:var(--navy);}
+  .faq-item p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  /* Sticky mobile CTA */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0;
+    background:var(--white);
+    border-top:1px solid #ddd;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 18px rgba(0,0,0,0.12);
+    z-index:50;
+    display:none;
+  }
+  .sticky-cta .cta-btn{box-shadow:0 5px 0 #4d7d26;}
+  @media (max-width:640px){
+    .sticky-cta{display:block;}
+    body{padding-bottom:78px;}
+    .ing-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  footer{
+    background:var(--navy);
+    color:#a9c2bd;
+    font-size:12px;
+    padding:28px 0 40px;
+  }
+  footer p{margin:0 0 12px;}
+  footer .disclaimer{border-top:1px solid rgba(255,255,255,0.12); padding-top:16px; margin-top:16px; color:#89a5a0;}
+</style>
+</head>
+<body>
+
+  <div class="topbar">🌿 Plant-Based Formula &nbsp;•&nbsp; 90-Day Money-Back Guarantee &nbsp;•&nbsp; One-Time Payment</div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">Hearing Health Breakthrough</span>
+      <div class="hero-visual">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#ffffff" fill-opacity="0.06"/>
+          <circle cx="50" cy="50" r="34" fill="#ffffff" fill-opacity="0.08"/>
+          <path d="M40 30c-8 4-13 12-13 21 0 12 9 21 19 24" stroke="#8fd694" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M46 38c-5 2-8 7-8 13 0 7 5 13 12 15" stroke="#b6e07c" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="63" cy="46" r="6" fill="#8fd694"/>
+        </svg>
+      </div>
+      <h1>Struggling With Ringing Ears or <span>Fading Hearing?</span></h1>
+      <p class="sub">Audifort is a 20+ plant-ingredient liquid formula designed to support your hearing health from the inside out — no pills, no surgery, just a few drops a day.</p>
+
+      <div class="cta-wrap">
+        <a class="cta-btn" href="https://dc737z4boaawg3f418l41k-zb9.hop.clickbank.net/?&traffic_source=facebook" rel="nofollow sponsored">
+          Check Availability Now
+          <small>90-Day Money-Back Guarantee</small>
+        </a>
+        <p class="cta-note">As seen promoted to health-conscious adults 30–70 · Ships worldwide</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="container">
+      <h2>Does This Sound Familiar?</h2>
+      <p class="lede">Millions of adults quietly struggle with hearing changes and never do anything about it — until it starts affecting daily life.</p>
+      <ul class="problem-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span>Constantly asking people to repeat themselves, especially in noisy rooms</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span>An annoying ringing or buzzing sound that shows up when things get quiet</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span>Turning the TV up louder than everyone else is comfortable with</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span>Worrying that hearing changes might be tied to memory and focus, too</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS / INGREDIENTS -->
+  <section class="alt">
+    <div class="container">
+      <h2>A Different Approach</h2>
+      <p class="lede">Audifort combines over 20 plant-based ingredients in one easy liquid dropper, taken once daily.</p>
+      <div class="ing-grid">
+        <div class="ing-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10Z"/></svg>
+          <h3>Maca Root</h3>
+          <p>Traditionally used to support healthy circulation and energy</p>
+        </div>
+        <div class="ing-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <h3>Grape Seed</h3>
+          <p>Rich in antioxidants that may help protect delicate cells</p>
+        </div>
+        <div class="ing-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8c0 5 3 9 7 9s7-4 7-9"/></svg>
+          <h3>Green Tea Extract</h3>
+          <p>A well-known source of natural antioxidant support</p>
+        </div>
+        <div class="ing-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 12a8 8 0 0 1 8-8M4 12a8 8 0 0 0 8 8"/></svg>
+          <h3>GABA</h3>
+          <p>An amino acid connected to calm, balanced nervous-system function</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section>
+    <div class="container">
+      <h2>How Simple Is It?</h2>
+      <p class="lede">Three easy steps — no appointments, no equipment.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div><h3>Fill the dropper</h3><p>Use the included dropper to measure roughly 15 drops.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div><h3>Take it daily</h3><p>Place under your tongue or mix into water or juice, once a day.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div><h3>Stay consistent</h3><p>Many users say they notice a difference within the first week; the makers recommend at least 3–4 months for best results.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="alt">
+    <div class="container">
+      <div class="guarantee">
+        <svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>90-Day, No-Questions-Asked Guarantee</h3>
+        <p>Try Audifort risk-free. If you're not satisfied for any reason within 90 days of purchase, simply reach out for a full refund — no questions asked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section>
+    <div class="container">
+      <div class="offer-box">
+        <span class="tag">Most Popular</span>
+        <h3>Multi-Bottle Bundles Available</h3>
+        <p>Larger packages currently include free shipping and free bonus digital guides. Pricing is a one-time payment — no subscriptions or recurring charges. Availability and bonuses are set by the manufacturer and may change.</p>
+        <a class="cta-btn" href="https://dc737z4boaawg3f418l41k-zb9.hop.clickbank.net/?&traffic_source=facebook" rel="nofollow sponsored">
+          See Current Pricing &amp; Bundles
+          <small>90-Day Money-Back Guarantee</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="container">
+      <h2>Common Questions</h2>
+      <div class="faq-item">
+        <h3>Is Audifort safe?</h3>
+        <p>Audifort is made from plant-based ingredients. As with any supplement, check the full ingredient list and talk to your doctor before use, especially if you take medication or have a medical condition.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long until I notice results?</h3>
+        <p>Experiences vary. Some users report noticing a difference within the first week, while the manufacturer recommends 3–4 months of consistent use for full results.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if it doesn't work for me?</h3>
+        <p>Every order is backed by a 90-day money-back guarantee direct from the manufacturer.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where is it shipped from and how is it billed?</h3>
+        <p>Orders are processed securely through ClickBank, a trusted retailer for digital and physical goods, and billing/shipping details are shown at checkout before you pay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Support Your Hearing Health?</h2>
+      <p class="lede">Check current availability and pricing before this offer changes.</p>
+      <a class="cta-btn" href="https://dc737z4boaawg3f418l41k-zb9.hop.clickbank.net/?&traffic_source=facebook" rel="nofollow sponsored">
+        Get Audifort Now
+        <small>90-Day Money-Back Guarantee</small>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>Audifort®</strong> — This is an independent advertising/affiliate page. We are not the manufacturer or seller of this product.</p>
+      <p class="disclaimer">
+        Affiliate Disclosure: This page contains affiliate links. If you purchase through a link on this page, we may earn a commission at no additional cost to you.<br><br>
+        These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Consult your physician before starting any new supplement, especially if pregnant, nursing, taking medication, or have a known medical condition.<br><br>
+        Testing and offer details (pricing, bundles, bonuses, guarantee terms) are set and fulfilled solely by the product manufacturer/retailer and are subject to change without notice; always confirm current terms on the official order page before purchasing.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta">
+    <a class="cta-btn" href="https://dc737z4boaawg3f418l41k-zb9.hop.clickbank.net/?&traffic_source=facebook" rel="nofollow sponsored">
+      Get Audifort Now
+    </a>
+  </div>
+
+</body>
+</html>
